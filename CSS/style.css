@@ -1,0 +1,412 @@
+/* -------------- Fonts  -------------- */
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
+
+/* -------------- End of Fonts  -------------- */
+
+
+/* -------------- Global Css  -------------- */
+
+:root {
+    --main-color: grey;
+    --color-1: #e91e63;
+    --color-2: #f5ae10;
+    --color-3: #09d69c;
+    --main-to-dark-color: var(--main-color);
+    --dark-to-main-color: var(--bg-dark);
+    --shadow-black-100: 0 5px 15px rgba(0, 0, 0, 0.1);
+    --shadow-black-300: 0 5px 15px rgba(0, 0, 0, 0.3);
+    --black-900: #000000;
+    --black-400: #555555;
+    --black-100: #f7f7f7;
+    --black-000: #ffffff;
+    --black-alpha-100: rgba(0, 0, 0, 0.05);
+}
+
+body {
+    font-family: 'poppins', sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    overflow-x: hidden;
+    background: white;
+    /* line-height:1.5px; */
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    outline: none !important;
+}
+
+img {
+    max-width: 100%;
+    vertical-align: middle;
+}
+
+ul {
+    list-style: none;
+}
+
+.btn-1 {
+    background-color: white;
+    padding: 12px 30px;
+    border: none;
+    border-radius: 30px;
+    color: var(--main-color);
+    font-size: 16px;
+    text-transform: capitalize;
+    box-shadow: var(--shadow-black-300);
+    font-weight: 500;
+}
+
+.btn-1:focus {
+    box-shadow: var(--shadow-black-300);
+}
+
+.btn-1:hover {
+    color: white;
+    background-color: var(--main-color);
+}
+
+
+/* -------------- End of Global Css  -------------- */
+
+@keyframes spin_01 {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes bounceTop_01 {
+    0%,
+    100% {
+        transform: translateY(-30px);
+    }
+    50% {
+        transform: translateY(0px);
+    }
+}
+
+@keyframes pulse_01 {
+    0% {
+        transform: scale(0.94);
+        box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.7);
+    }
+    70% {
+        transform: scale(1);
+        box-shadow: 0 0 0 12px rgba(255, 255, 255, 0);
+    }
+    100% {
+        transform: scale(0.94);
+        box-shadow: 0 0 0 0 rgba(255, 255, 255, 0);
+    }
+}
+
+
+/* -------------- Navbar -------------- */
+
+.navbar {
+    background-color: var(--main-color);
+}
+
+nav .container button i {
+    color: white;
+}
+
+.navbar>.container {
+    padding: 0 15px;
+}
+
+.navbar .navbar-brand {
+    font-size: 30px;
+    color: #ffffff;
+    font-weight: 500;
+    text-transform: capitalize;
+}
+
+.navbar .nav-item {
+    margin-left: 40px;
+}
+
+@media only screen and(max-width: 768px) {
+    .home-img {
+        margin-top: 50px !important;
+    }
+}
+
+.navbar .nav-item .nav-link {
+    color: #ffffff;
+    text-transform: capitalize;
+    font-size: 16px;
+    font-weight: 400;
+    padding: 5px 0;
+    position: relative;
+}
+
+.navbar .nav-item .nav-link::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    height: 1px;
+    background-color: #ffffff;
+    transition: all 0.5s ease;
+    transform: scale(0);
+}
+
+.navbar .nav-item .nav-link.active::before,
+.navbar .nav-item .nav-link:hover:before {
+    transform: scale(1);
+}
+
+
+/* -------------- End of Navbar  -------------- */
+
+
+/* -------------- Home Section  -------------- */
+
+.home {
+    min-height: 100vh;
+    padding: 150px 0;
+    background-color: var(--main-to-dark-color);
+}
+
+.home-text h1 {
+    font-size: 45px;
+    font-weight: 700;
+    color: white;
+    margin: 0 0 20px;
+}
+
+.home-text p {
+    font-size: 18px;
+    line-height: 28px;
+    color: white;
+    margin: 0;
+    font-weight: 300;
+}
+
+.home .home-btn {
+    margin-top: 40px;
+}
+
+.home .home-btn .video-play-btn {
+    margin-left: 30px;
+    height: 50px;
+    width: 50px;
+    padding: 0;
+    font-size: 16px;
+    animation: pulse_01 2s ease infinite;
+}
+
+.home .home-btn .video-play-btn:hover {
+    animation: none;
+    box-shadow: var(--shadow-black-300);
+}
+
+.home-img img {
+    max-width: 500px;
+    width: 100%;
+    box-shadow: var(--shadow-black-100);
+    border-radius: 30px;
+    animation: bounceTop_01 3s ease infinite;
+}
+
+.home-img {
+    position: relative;
+    margin-top: 50px;
+}
+
+.home-img .circle {
+    position: absolute;
+    z-index: 1;
+    height: 400px;
+    width: 400px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.home-img .circle::before {
+    content: '';
+    position: absolute;
+    height: 60px;
+    width: 60px;
+    background-color: rgba(255, 255, 255, 0.4);
+    border-radius: 50px;
+    left: 30px;
+    top: 30px;
+    transform-origin: 170px 170px;
+    animation: spin_01 10s linear infinite;
+}
+
+
+/* -------------- End of Home Section  -------------- */
+
+
+/* -------------- Grid Small Cards  -------------- */
+
+.grid {
+    margin-top: 20px;
+}
+
+.grid img {
+    border-radius: 10px;
+}
+
+.grid h5 {
+    margin-top: 2rem;
+    margin-left: 10px;
+}
+
+.grid .col {
+    margin: auto;
+}
+
+.grid-2 {
+    margin-top: 20px;
+}
+
+.grid-2 img {
+    border-radius: 10px;
+}
+
+.grid-2 h5 {
+    margin-top: 2rem;
+    margin-left: 10px;
+}
+
+.grid-2 .col {
+    margin: auto;
+}
+
+
+/* -------------- End of Grid Small Cards  -------------- */
+
+
+/* -------------- Cards  -------------- */
+
+.cards {
+    margin: 20px;
+    margin-left: 40px;
+    margin-right: 40px;
+}
+
+.cards h1 {
+    margin: 30px;
+}
+
+.cards img {
+    border-radius: 15px;
+    box-shadow: var(--shadow-black-300);
+}
+
+
+/* -------------- Cards End -------------- */
+
+.section section {
+    margin: 4rem;
+    background: url('../img/Iwatch/pexels-ingo-joseph-1682821.jpg') no-repeat center;
+    background-size: cover;
+    border-radius: 30px;
+    min-height: 400px;
+}
+
+.section section {
+    box-shadow: var(--shadow-black-300);
+}
+
+.section section .home-text h1 {
+    font-size: 40px;
+    font-weight: 700;
+    color: white;
+    margin-top: 5rem;
+}
+
+.section section .btn {
+    margin-top: 3rem;
+    border-radius: 10px;
+}
+
+
+/* -------------- Card-2 -------------- */
+
+
+/* -------------- Card-3 -------------- */
+
+.card-2 .card {
+    margin: 15px;
+    box-shadow: var(--shadow-black-300);
+}
+
+.card-2 {
+    margin: 3rem;
+}
+
+.card-2 h1 p {
+    margin: 16px;
+}
+
+.card-2 .card img {
+    border-radius: 15px;
+}
+
+
+/* -------------- Card-3 -------------- */
+
+hr {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+
+/* -------------- Flex -------------- */
+
+.flex-1 {
+    margin-top: 2rem;
+}
+
+.flex-2 {
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+}
+
+.flex-3 {
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+}
+
+.flex-4 {
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+}
+
+
+/* -------------- Flex -------------- */
+
+.navu .nav-tabs {
+    border: none !important;
+}
+
+.navu .nav-tabs li a.active {
+    border: none !important;
+    border-bottom: 1px solid black !important;
+}
+
+.flex-box ul li {
+    color: rgb(148, 150, 151);
+}
+
+footer {
+    background-color: grey;
+    text-align: center;
+    padding: 15px;
+    margin-top: 4%;
+    color: white;
+}
